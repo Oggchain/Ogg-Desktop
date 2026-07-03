@@ -1,8 +1,8 @@
 {
   "name": "ogg-desktop",
   "productName": "Ogg Desktop",
-  "version": "2.0.0",
-  "description": "Ogg Desktop Master Tool",
+  "version": "2.1.0",
+  "description": "Ogg Desktop",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
@@ -12,7 +12,7 @@
     "build:all": "electron-builder --win --linux"
   },
   "build": {
-    "appId": "org.oggcoin.desktop",
+    "appId": "org.oggchain.desktop",
     "productName": "Ogg Desktop",
     "icon": "assets/icon",
     "directories": {
@@ -116,5 +116,5 @@
   "dependencies": {
     "ethers": "^5.7.2"
   },
-  "author": "Oggcoin"
+  "author": "Oggchain"
 }

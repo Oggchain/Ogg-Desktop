@@ -1,11 +1,11 @@
 // OGG Desktop — Wallet Logic
 // All contract calls, validations, keystore management
 
-const RPC = 'https://rpc.oggcoin.org'
+const RPC = 'https://rpc.oggchain.com'
 const RPC_FALLBACKS = ['http://85.190.254.195:18545','http://85.190.254.196:18547','http://81.17.99.108:18545']
 const CHAIN_ID = 70088
 const CHAIN_HEX = '0x111c8'
-const EXPLORER = 'https://scan.oggcoin.org'
+const EXPLORER = 'https://scan.oggchain.com'
 
 // Contract addresses
 const CONTRACTS = {
@@ -44,7 +44,7 @@ let provider = null
 let wallet = null   // ethers.Wallet
 let signer = null
 
-// Keystores stored in memory (in production: encrypted to userData via fs)
+// Encrypted keystores
 let keystores = []  // [{name, address, keystore (encrypted JSON)}]
 let activeKeystore = null
 
@@ -73,8 +73,7 @@ async function getBlock() {
 }
 
 // ─── Keystore ────────────────────────────────────────────
-// In production these are saved to userData path via fs
-// Here we use localStorage as stand-in
+// Encrypted keystores persisted locally
 function loadKeystores() {
   try {
     const raw = localStorage.getItem('ogg-keystores')
